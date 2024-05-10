@@ -4,7 +4,7 @@ import io
 import spacy
 import pprint
 from spacy.matcher import Matcher
-from pydparser import utils
+from . import utils
 
 
 class JdParser(object):
