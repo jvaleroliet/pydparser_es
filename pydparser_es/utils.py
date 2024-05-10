@@ -410,23 +410,38 @@ def extract_email(text):
 
 
 def extract_name(nlp_text, matcher):
-    """
+    '''
     Helper function to extract name from spacy nlp text
 
     :param nlp_text: object of `spacy.tokens.doc.Doc`
     :param matcher: object of `spacy.matcher.Matcher`
     :return: string of full name
-    """
-    pattern = [cs.NAME_PATTERN]
+    '''
+    # Define patterns for name extraction
+    patterns = [cs.NAME_PATTERN, cs.FULL_NAME_PATTERN, cs.FULL_DOUBLE_NAME_PATTERN]
 
-    matcher.add('NAME', pattern)
+    # Add patterns to matcher
+    for idx, pattern in enumerate(patterns):
+        matcher.add(f'PATTERN_{idx}', [pattern])
 
+    # Match patterns in the text
     matches = matcher(nlp_text)
-
+    candidate = ""
+    # Iterate over matches and extract the full name
+    i=0
     for _, start, end in matches:
         span = nlp_text[start:end]
-        if 'name' not in span.text.lower():
-            return span.text
+        # In spanish context it could be that there are two names and two surnames
+        # Ensure the extracted span is not just a single given name
+        if len(span) > 1 and 'nombre' not in span.text.lower():
+            if i == 0:
+                candidate = span.text
+                i+=1
+            if candidate in span.text and i<5:
+                candidate = span.text
+                i+=1     
+    # Return the full name extracted from the matched span
+    return candidate
 
 
 def extract_mobile_number(text, custom_regex=None):

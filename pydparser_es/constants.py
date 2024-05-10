@@ -2,6 +2,9 @@ from nltk.corpus import stopwords
 
 # Omkar Pathak
 NAME_PATTERN = [{'POS': 'PROPN'}, {'POS': 'PROPN'}]
+FULL_NAME_PATTERN = [{'POS': 'PROPN'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}]
+FULL_DOUBLE_NAME_PATTERN = [{'POS': 'PROPN'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}, {'POS': 'PROPN'}]
+
 
 # Education (Upper Case Mandatory)
 EDUCATION = [

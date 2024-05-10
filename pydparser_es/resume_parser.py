@@ -15,7 +15,7 @@ class ResumeParser(object):
             custom_regex=None
     ):
         print('Spacy model is loading...')
-        nlp = spacy.load('en_core_web_sm')
+        nlp = spacy.load('es_core_news_sm')
         current_directory = os.path.dirname(os.path.abspath(__file__))
 
         custom_nlp = spacy.load(os.path.join(current_directory, 'models', 'res_model'))
