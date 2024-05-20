@@ -431,15 +431,7 @@ def extract_mobile_number(text, custom_regex=None):
     :return: string of extracted mobile numbers
     """
     # Found this complicated regex on :
-    # https://zapier.com/blog/extract-links-email-phone-regex/
-    # mob_num_regex = r'''(?:(?:\+?([1-9]|[0-9][0-9]|
-    #     [0-9][0-9][0-9])\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|
-    #     [2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([0-9][1-9]|
-    #     [0-9]1[02-9]|[2-9][02-8]1|
-    #     [2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|
-    #     [2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{7})
-    #     (?:\s*(?:#|x\.?|ext\.?|
-    #     extension)\s*(\d+))?'''
+    # https://es.stackoverflow.com/questions/415/regex-para-validar-numeros-de-movil-espa%C3%B1oles'''
 
     if not custom_regex:
         mob_num_regex = r'''(\+34|0034|34)?[ -]*(6|7)([0-9]){2}[ -]?(([0-9]){2}[ -]?([0-9]){2}[ -]?([0-9]){2}|([0-9]){3}[ -]?([0-9]){3})'''
