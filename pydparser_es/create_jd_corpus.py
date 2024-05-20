@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 def get_example_chunk(data):
-    nlp = spacy.load('en_core_web_sm')
+    nlp = spacy.load('es_core_news_sm')
     examples: list[Example] = []
     for line in data:
         predicted = Doc(nlp.vocab, words=line['pos'])

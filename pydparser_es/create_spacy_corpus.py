@@ -88,7 +88,7 @@ def save_as_spacy_corpus(
         data: list, dest: str = '', dev_size: float = 0.20
 ) -> list:
     os.makedirs(dest, exist_ok=True)
-    nlp = spacy.load('en_core_web_sm')
+    nlp = spacy.load('es_core_news_sm')
     db_train = DocBin()
     db_dev = DocBin()
     docs = []
