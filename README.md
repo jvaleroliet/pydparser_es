@@ -11,8 +11,8 @@ Built with ❤️ by [Juan Valero](https://github.com/jvaleroliet) inspired by [
 # Features
 
 - [x] Extract name from resumes
-- [ ] Extract email from resumes
-- [ ] Extract mobile numbers from resumes
+- [x] Extract email from resumes
+- [x] Extract mobile numbers from resumes
 - [ ] Extract skills from resumes
 - [ ] Extract total experience from resumes
 - [ ] Extract college name from resumes
